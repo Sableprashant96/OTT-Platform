@@ -1,0 +1,23 @@
+<div class="login-container">
+    <img class="movie" src="assets/images/movie.png" alt="" />
+    <div class="logo">StreamFlix</div>
+    <div class="desc">Dive into a world of limitless entertainment with StreamFlix, the ultimate streaming platform that caters to your every cinematic craving. Discover a vast collection of movies, binge-worthy TV shows, and captivating originals, all conveniently accessible anytime, anywhere. Immerse yourself in a seamless streaming experience, where your entertainment desires come to life</div>
+    <div class="login-form">
+      <div class="form-group">
+        <label for="uname">Username</label>
+        <input type="text" [(ngModel)]="username" name="uname" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="pword">Password</label>
+        <div class="input-wrapper">
+          <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" name="pword" class="form-control" />
+          <i class="password-toggle-icon fas" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}" (click)="togglePasswordVisibility()"></i>
+        </div>
+      </div>
+      <div class="btn-container">
+        <div class="error">{{ errormsg }}</div>
+        <button class="btn" (click)="login()">Login</button>
+      </div>
+    </div>
+  </div>
+  
